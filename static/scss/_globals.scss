@@ -1,0 +1,42 @@
+// Fuente
+body {
+    font-family: sans-serif;
+}
+
+// Layout
+.page-container {
+    position: relative;
+    min-height: 100vh;
+    margin: 0 10%;
+}
+
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+// Botones
+.btn {
+    display: inline-block;
+    padding: .375rem .75rem;
+    color: $white;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: $blue;
+}
+
+.btn-lg {
+    $rel-size: 2;
+
+    padding: (.375rem * $rel-size) (.75rem * $rel-size);
+}
