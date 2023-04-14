@@ -1,0 +1,38 @@
+// Botones
+
+@mixin btn-pseudos($color) {
+    &:hover {
+        background-color: scale-color($color, $lightness: -30%);
+    }
+
+    &:focus {
+        background-color: scale-color($color, $lightness: -30%);
+    }
+
+    &:active {
+        background-color: scale-color($color, $lightness: -50%);
+    }
+}
+
+
+// Breakpoints
+
+@function breakpoint-min($breakpoint) {
+    @return map-get($breakpoints, $breakpoint);
+}
+
+@function breakpoint-max($breakpoint) {
+    @return map-get($breakpoints, $breakpoint) - 0.02;
+}
+
+@mixin breakpoint-up($breakpoint) {
+    @media (min-width: breakpoint-min($breakpoint)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($breakpoint) {
+    @media (max-width: breakpoint-max($breakpoint)) {
+        @content;
+    }
+}
