@@ -1,8 +1,8 @@
 @import "normalize";
 @import "variables";
 @import "mixins";
+@import "utilities";
 
 
 @import "globals";
-@import "header";
-@import "utilities";
+@import "components/header";

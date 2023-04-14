@@ -1,18 +1,24 @@
 <header class="header">
-    <div>
+    <div class="logo-container">
         <a href="{{ url_for('home.index') }}"><img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt=""></a>
     </div>
+
+    <button class="nav-toggler">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
     <nav class="nav">
         <ul>
             <li>
-                <a class="btn btn-primary btn-lg" href="{{ url_for('alumnos.create') }}">Registrar alumno</a>
+                <a class="btn-primary btn-lg" href="{{ url_for('alumnos.create') }}">Registrar alumno</a>
             </li>
             <li>
-                <a class="btn btn-primary btn-lg" href="{{ url_for('profesores.create') }}">Registrar profesor</a>
+                <a class="btn-primary btn-lg" href="{{ url_for('profesores.create') }}">Registrar profesor</a>
             </li>
             <li>
-                <a class="btn btn-primary btn-lg" href="{{ url_for('home.color') }}">Color</a>
+                <a class="btn-primary btn-lg" href="{{ url_for('home.color') }}">Color</a>
             </li>
         </ul>
     </nav>
