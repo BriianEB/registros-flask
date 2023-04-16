@@ -8,7 +8,9 @@ home = Blueprint('home', __name__)
 
 @home.route('/')
 def index():
-    return render_template('index.html')
+    alumnos = db.session.execute(db.select(Alumno)).scalars()
+
+    return render_template('index.html', alumnos=alumnos)
 
 @home.route('/color')
 def color():

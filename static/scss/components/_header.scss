@@ -21,6 +21,7 @@
             }
 
             span:nth-child(2) {
+                transform: rotateZ(180deg) translateY(-50%);
                 visibility: hidden;
                 transition: all 0s ease-in-out;
             }
@@ -31,6 +32,10 @@
                 transform-origin: 50% 0;
             }
         }
+    }
+
+    @include breakpoint-up(lg) {
+        padding: 1rem 10%;
     }
 }
 
@@ -57,7 +62,6 @@
         }
     }
 }
-
 
 .nav-toggler {
     position: relative;

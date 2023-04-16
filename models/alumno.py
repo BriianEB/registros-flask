@@ -1,4 +1,5 @@
 from database import db
+import utils.validations as validation
 
 
 class Alumno(db.Model):
@@ -10,3 +11,11 @@ class Alumno(db.Model):
     carrera = db.mapped_column(db.String(64))
     email = db.mapped_column(db.String(64), unique=True, index=True)
     telefono = db.mapped_column(db.String(64), unique=True)
+
+    validations = {
+        'matricula': [validation.required],
+        'nombre': [validation.required],
+        'carrera': [validation.required],
+        'email': [validation.required, validation.email],
+        'telefono': [validation.required, validation.phone]
+    }

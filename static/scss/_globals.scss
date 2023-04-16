@@ -25,7 +25,8 @@ body {
     vertical-align: middle;
     user-select: none;
     background-color: transparent;
-    border: 1px solid transparent;
+    transition: background-color 0.2s ease-in-out;
+    border: none;
 }
 
 @each $color, $value in $colors {
@@ -38,8 +39,53 @@ body {
     }
 }
 
+.btn-secondary {
+    color: $black;
+}
+
 .btn-lg {
-    $rel-size: 2;
+    $rel-size: 2.5;
 
     padding: (.375rem * $rel-size) (.75rem * $rel-size);
+}
+
+.btn-sm {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.btn-rounded {
+    border-radius: 0.5rem;
+}
+
+
+
+// Tablas
+
+.table {
+    border-collapse: collapse;
+    border: 1px solid $gray;
+
+    th, td {
+        width: 10rem;
+        padding: 0.75rem;
+        text-align: center;
+        vertical-align: top;
+    }
+
+    thead th {
+        background-color: $gray;
+    }
+
+    tbody tr:nth-of-type(even) {
+        background-color: rgba($black, 0.05);
+    }
+
+    tfoot td {
+        text-align: left;
+    }
+
+    tfoot td span {
+        font-weight: bold;
+    }
 }

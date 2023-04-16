@@ -4,5 +4,49 @@
 {% block title %} Crear alumno {% endblock %}
 
 {% block main %}
-    <h1>Crear alumno</h1>
+    <h2>Agregar nuevo alumno</h2>
+
+    <div class="form-container">
+        <form action="{{ url_for('alumnos.create') }}" method="POST">
+
+            <div class="form-group {{ 'error-control' if errors is defined and errors.get('matricula') else '' }}">
+                <label for="matricula">Matrícula</label>
+                <input class="form-control error-control" name="matricula" value="{{ alumno.matricula if alumno is defined else '' }}">
+                {% if errors is defined and errors.get('matricula') %}
+                    <div class="error-message">{{ errors['matricula'] }}</div>
+                {% endif %}
+            </div>
+            <div class="form-group {{ 'error-control' if errors is defined and errors.get('nombre') else '' }}">
+                <label for="nombre">Nombre</label>
+                <input class="form-control" name="nombre" value="{{ alumno.nombre if alumno is defined else '' }}">
+                {% if errors is defined and errors.get('nombre') %}
+                    <div class="error-message">{{ errors['nombre'] }}</div>
+                {% endif %}
+            </div>
+            <div class="form-group {{ 'error-control' if errors is defined and errors.get('carrera') else '' }}">
+                <label for="carrera">Carrera</label>
+                <input class="form-control" name="carrera" value="{{ alumno.carrera if alumno is defined else '' }}">
+                {% if errors is defined and errors.get('carrera') %}
+                    <div class="error-message">{{ errors['carrera'] }}</div>
+                {% endif %}
+            </div>
+            <div class="form-group {{ 'error-control' if errors is defined and errors.get('email') else '' }}">
+                <label for="email">Correo electrónico</label>
+                <input class="form-control" name="email" value="{{ alumno.email if alumno is defined else '' }}">
+                {% if errors is defined and errors.get('email') %}
+                    <div class="error-message">{{ errors['email'] }}</div>
+                {% endif %}
+            </div>
+            <div class="form-group {{ 'error-control' if errors is defined and errors.get('telefono') else '' }}">
+                <label for="telefono">Teléfono</label>
+                <input class="form-control" name="telefono" value="{{ alumno.telefono if alumno is defined else '' }}">
+                {% if errors is defined and errors.get('telefono') %}
+                    <div class="error-message">{{ errors['telefono'] }}</div>
+                {% endif %}
+            </div>
+            <div class="text-right">
+                <button type="submit" class="btn-primary btn-lg" name="guardar">Guardar</button>
+            </div>
+        </form>
+    </div>
 {% endblock %}

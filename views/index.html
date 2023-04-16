@@ -1,8 +1,13 @@
-{% extends "shared/layout.html" %}
+{% extends 'shared/layout.html' %}
+
+{% from 'alumnos/_alumnos_table.html' import alumnos_table %}
 
 
 {% block title %} Registros {% endblock %}
 
 {% block main %}
-    <h1>Registros</h1>
+    <h2>Lista de alumnos</h2>
+
+    {{ alumnos_table(alumnos) }}
+
 {% endblock %}

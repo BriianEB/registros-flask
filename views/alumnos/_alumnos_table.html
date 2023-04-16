@@ -1,0 +1,28 @@
+{% macro alumnos_table(alumnos) %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Matrícula</th>
+                <th>Nombre</th>
+                <th>Carrera</th>
+                <th>Correo electrónico</th>
+                <th>Teléfono</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alumno in alumnos %}
+                <tr>
+                    <td>{{ alumno.matricula }}</td>
+                    <td>{{ alumno.nombre }}</td>
+                    <td>{{ alumno.carrera }}</td>
+                    <td>{{ alumno.email }}</td>
+                    <td>{{ alumno.telefono }}</td>
+                    <td>
+                        <a class="btn-secondary btn-sm btn-rounded" href="">Ver detalles</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}
