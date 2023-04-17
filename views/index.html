@@ -1,13 +1,26 @@
 {% extends 'shared/layout.html' %}
 
 {% from 'alumnos/_alumnos_table.html' import alumnos_table %}
+{% from 'profesores/_profesores_table.html' import profesores_table %}
 
 
 {% block title %} Registros {% endblock %}
 
 {% block main %}
-    <h2>Lista de alumnos</h2>
+    <div class="section">
+        <h2>Lista de alumnos</h2>
 
-    {{ alumnos_table(alumnos) }}
+        <div class="table-container">
+            {{ alumnos_table(alumnos, alumnos_count) }}
+        </div>
+    </div>
+
+    <div class="section mt-7">
+        <h2>Lista de profesores</h2>
+
+        <div class="table-container">
+            {{ profesores_table(profesores, profesores_count) }}
+        </div>
+    </div>
 
 {% endblock %}

@@ -1,10 +1,12 @@
-{% extends "shared/layout.html" %}
+{% extends 'shared/layout.html' %}
 
 
 {% block title %} Crear alumno {% endblock %}
 
 {% block main %}
-    <h2>Agregar nuevo alumno</h2>
+    <div class="form-title">
+        <h2>Agregar nuevo alumno</h2>
+    </div>
 
     <div class="form-container">
         <form action="{{ url_for('alumnos.create') }}" method="POST">

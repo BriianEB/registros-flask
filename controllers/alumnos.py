@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, abort
 
 import utils.validations as validation
 from database import db
@@ -34,3 +34,12 @@ def create():
         return redirect(url_for('home.index'))
 
     return render_template('alumnos/create.html')
+
+@alumnos.route('/alumnos/<id>')
+def show(id):
+    try:
+        alumno = db.session.execute(db.select(Alumno).filter_by(id=id)).scalar_one()
+    except:
+        abort(404)
+
+    return render_template('alumnos/view.html', alumno=alumno)

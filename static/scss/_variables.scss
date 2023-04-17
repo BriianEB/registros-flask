@@ -1,11 +1,14 @@
 // Colores
 
 $black: #000;
+$black-2: #333;
 $white: #fff;
+$white-2: #eee;
 $blue: #008cba;
 $red: #cd0035;
 $gray: #e7e7e7;
 $gray-2: #ced4da;
+$light: #777;
 
 $colors: (
     "primary": $blue,
@@ -22,3 +25,11 @@ $breakpoints: (
     xl: 1200px,
     xxl: 1400px
 );
+
+
+// Fonts
+$font-sm: 0.8125rem;
+$font-md: 1rem;
+
+$h2-font-sm: 1.125rem;
+$h2-font-md: 1.5rem;

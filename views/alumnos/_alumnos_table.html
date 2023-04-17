@@ -1,5 +1,5 @@
-{% macro alumnos_table(alumnos) %}
-    <table class="table">
+{% macro alumnos_table(alumnos, alumnos_count) %}
+    <table class="table-striped">
         <thead>
             <tr>
                 <th>Matrícula</th>
@@ -19,10 +19,15 @@
                     <td>{{ alumno.email }}</td>
                     <td>{{ alumno.telefono }}</td>
                     <td>
-                        <a class="btn-secondary btn-sm btn-rounded" href="">Ver detalles</a>
+                        <a class="btn-secondary btn-sm btn-rounded" href="{{ url_for('alumnos.show', id=alumno.id) }}">Ver detalles</a>
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6"><span>Total de registros: {{ alumnos_count }}</span></td>
+            </tr>
+        </tfoot>
     </table>
 {% endmacro %}

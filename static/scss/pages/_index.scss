@@ -1,0 +1,13 @@
+.section {
+    h2 {
+        margin-left: 1rem;
+
+        @include breakpoint-up(xl) {
+            margin-left: 0;
+        }
+    }
+}
+
+.table-container {
+    overflow: auto;
+}

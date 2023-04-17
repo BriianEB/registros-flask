@@ -1,0 +1,31 @@
+{% macro profesores_table(profesores, profesores_count) %}
+    <table class="table-striped">
+        <thead>
+            <tr>
+                <th>No. empleado</th>
+                <th>Nombre</th>
+                <th>Carrera</th>
+                <th>Teléfono</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profesor in profesores %}
+                <tr>
+                    <td>{{ profesor.no_empleado }}</td>
+                    <td>{{ profesor.nombre }}</td>
+                    <td>{{ profesor.carrera }}</td>
+                    <td>{{ profesor.telefono }}</td>
+                    <td>
+                        <a class="btn-secondary btn-sm btn-rounded" href="{{ url_for('profesores.show', id=profesor.id) }}">Ver detalles</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6"><span>Total de registros: {{ profesores_count }}</span></td>
+            </tr>
+        </tfoot>
+    </table>
+{% endmacro %}

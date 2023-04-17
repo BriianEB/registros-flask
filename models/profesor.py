@@ -1,3 +1,4 @@
+import utils.validations as validation
 from database import db
 
 
@@ -9,3 +10,10 @@ class Profesor(db.Model):
     nombre = db.mapped_column(db.String(64))
     carrera = db.mapped_column(db.String(64))
     telefono = db.mapped_column(db.String(64), unique=True)
+
+    validations = {
+        'no_empleado': [validation.required],
+        'nombre': [validation.required],
+        'carrera': [validation.required],
+        'telefono': [validation.required, validation.phone]
+    }

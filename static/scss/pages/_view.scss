@@ -1,0 +1,21 @@
+.details-title {
+    margin: 0 1rem;
+
+    @include breakpoint-up(xl) {
+        margin: 0;
+    }
+}
+
+.details-container {
+    margin: 0 1rem;
+
+    @include breakpoint-up(lg) {
+        margin: 0;
+        width: 90%;
+    }
+
+    @include breakpoint-up(xxl) {
+        margin: 0;
+        width: 70%;
+    }
+}

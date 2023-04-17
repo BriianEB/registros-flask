@@ -1,0 +1,43 @@
+footer {
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+    bottom: 0;
+    height: 10rem;
+    display: flex;
+    align-items: flex-end;
+
+    .footer-wrapper {
+        flex-grow: 1;
+    }
+
+    .footer-content {
+        display: flex;
+        padding: 1rem 0;
+
+        .footer-info {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .footer-options {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .footer-options a {
+            text-decoration: none;
+            color: #008CBA;
+        }
+
+        .footer-options a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @include breakpoint-up(xl) {
+        padding: 1rem 10%;
+    }
+}

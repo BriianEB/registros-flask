@@ -12,6 +12,10 @@
     justify-content: center;
 }
 
+.w-100 {
+    width: 100%;
+}
+
 
 // Texto
 .text-right {
@@ -20,4 +24,14 @@
 
 .text-red {
     color: $red;
+}
+
+.text-light {
+    color: $light;
+}
+
+
+// Margen
+.mt-7 {
+    margin-top: 7rem;
 }

@@ -1,5 +1,5 @@
-from database import db
 import utils.validations as validation
+from database import db
 
 
 class Alumno(db.Model):

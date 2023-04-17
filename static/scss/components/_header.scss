@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 1rem;
 
     &.show {
         .nav {
@@ -34,7 +34,7 @@
         }
     }
 
-    @include breakpoint-up(lg) {
+    @include breakpoint-up(xl) {
         padding: 1rem 10%;
     }
 }

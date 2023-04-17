@@ -1,0 +1,37 @@
+{% extends 'shared/layout.html' %}
+
+
+{% block title %} Ver alumno {% endblock %}
+
+{% block main %}
+    <div class="details-title">
+        <h2>Detalles del alumno</h2>
+    </div>
+
+    <div class="details-container">
+        <table class="table w-100">
+            <thead class="header-dark">
+                <tr>
+                    <th>Detalles del alumno</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-light">{{ alumno.matricula }}</td>
+                </tr>
+                <tr>
+                    <td class="text-light">{{ alumno.nombre }}</td>
+                </tr>
+                <tr>
+                    <td class="text-light">{{ alumno.carrera }}</td>
+                </tr>
+                <tr>
+                    <td class="text-light">{{ alumno.email }}</td>
+                </tr>
+                <tr>
+                    <td class="text-light">{{ alumno.telefono }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
