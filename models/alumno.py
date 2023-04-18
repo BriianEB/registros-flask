@@ -13,9 +13,9 @@ class Alumno(db.Model):
     telefono = db.mapped_column(db.String(64), unique=True)
 
     validations = {
-        'matricula': [validation.required],
-        'nombre': [validation.required],
-        'carrera': [validation.required],
-        'email': [validation.required, validation.email],
-        'telefono': [validation.required, validation.phone]
+        'matricula': [validation.required(), validation.length(7)],
+        'nombre': [validation.required()],
+        'carrera': [validation.required()],
+        'email': [validation.required(), validation.email()],
+        'telefono': [validation.required(), validation.phone()]
     }

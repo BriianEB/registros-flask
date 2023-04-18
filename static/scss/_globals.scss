@@ -25,6 +25,7 @@ body {
 }
 
 .main {
+    padding-top: 1rem;
     padding-bottom: 10rem;
 
     @include breakpoint-up(xl){
@@ -62,9 +63,7 @@ body {
 }
 
 .btn-lg {
-    $rel-size: 2.5;
-
-    padding: (.375rem * $rel-size) (.75rem * $rel-size);
+    padding: 1rem 2rem;
 }
 
 .btn-sm {

@@ -1,14 +1,17 @@
 import re
 
 
-def required(value):
-    return 'Debes llenar este campo' if value == '' else False
+def required():
+    return lambda value: 'Debes llenar este campo' if value == '' else False
 
-def email(value):
-    return 'Ingresa un email válido' if re.search('[\w-]+@[\w]+\.[\w]+', value) == None else False
+def email():
+    return lambda value: 'Ingresa un email válido' if re.search('[\w-]+@[\w]+\.[\w]+', value) == None else False
 
-def phone(value):
-    return 'Ingresa un número de teléfono válido' if re.search('^[\d-]+$', value) == None else False
+def phone():
+    return lambda value: 'Ingresa un número de teléfono válido' if re.search('^[\d-]+$', value) == None else False
+
+def length(length):
+    return lambda value: f'Ingresa un valor de exactamente {length} caracteres' if len(value) != length else False
 
 def validate(validations, data):
     errors = {}

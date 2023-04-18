@@ -12,8 +12,8 @@ class Profesor(db.Model):
     telefono = db.mapped_column(db.String(64), unique=True)
 
     validations = {
-        'no_empleado': [validation.required],
-        'nombre': [validation.required],
-        'carrera': [validation.required],
-        'telefono': [validation.required, validation.phone]
+        'no_empleado': [validation.required()],
+        'nombre': [validation.required()],
+        'carrera': [validation.required()],
+        'telefono': [validation.required(), validation.phone()]
     }
